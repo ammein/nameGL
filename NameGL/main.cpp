@@ -4,12 +4,12 @@
 
 using namespace std;
 
-GLsizei windowWidth = 500, windowHeight = 500;
+GLsizei windowWidth = 1024, windowHeight = 435;
 
 void initGL()
 {
 	glClearColor(0.431, 0.462, 0.866, 1.0f); // RGBA Window Color
-	gluOrtho2D(0, windowWidth, windowHeight, 0);
+	//gluOrtho2D(0, windowWidth, windowHeight, 0);
 }
 /***************************************************
 
@@ -32,79 +32,56 @@ y											1
 void displayFunc()
 {
 	glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer (background)
-	// Time to draw
-	glPointSize(20.0); // Point Size Color
-	glBegin(GL_POINTS);
-	glColor3f(0.584f, 0, 0.921f); // RGB Point Color
-	glVertex2d(float(44/float (windowWidth / 2)), float(151 / float(windowHeight / 2))); // Value -1 -> 1 positioning x
-	glEnd();
-	glPointSize(20.0); // Point Size Color
-	glBegin(GL_POINTS);
-	glColor3f(0.584f, 0.607f, 0.921f); // RGB Point Color
-	glVertex2d(float (24.5 /float (windowWidth / 2)),float (69.5/ float(windowHeight / 2))); // Value -1 -> 1 positioning x
-	glEnd();
-	glPointSize(20.0); // Point Size Color 
-	glBegin(GL_POINTS);
-	glColor3f(0.584f, 0.607f, 0.921f); // RGB Point Color
-	glVertex2d(float (179.343 /float (windowWidth / 2)),float (118/ float(windowHeight / 2))); // Value -1 -> 1 positioning x
-	glEnd();
-	glPointSize(20.0); // Point Size Color
-	glBegin(GL_POINTS);
-	glColor3f(0.584f, 0.607f, 0.921f); // RGB Point Color
-	glVertex2d(float (211.281 /float (windowWidth / 2)) - 1,float (196.503 / float(windowHeight / 2)) - 1 ); // Value -1 -> 1 positioning x
-	glEnd();
 
-	// New Point
-	glPointSize(66.0);
+	// New Point left side
+	glPointSize(44.0);
 	glBegin(GL_POINTS);
-	//glColor3f(0.584f, 0.607f, 0.921f); // RGB Point Color
-	glColor3i(35, 227, 255); // RGB Point Color
-	glVertex2d(100.0 , 309.0);
+	glColor3f(0.717, 0.960, 1); // RGB Point Color
+	int vertex = 28.5;
+	for (int a = 0; a <= 8; a++) {
+		glVertex2f(25.5, vertex);
+		vertex = vertex + 47; // to get increment value manually in C++
+	}
 	glEnd();
+	cout << "Increment Value = " << vertex << endl;
+	// New Point right side
+	glPointSize(44.0);
+	glBegin(GL_POINTS);
+	glColor3f(0.717, 0.960, 1); // RGB Point Color
+	int vertex2 = 29;
+	for (int a = 0; a <= 8; a++) {
+		glVertex2f(998, vertex2);
+		vertex2 = vertex2 + 47; // to get increment value manually in C++
+	}
+	glEnd();
+	cout << "Increment Value = " << vertex << endl;
 
-	// Line Grid
-	glLineWidth(2.0);
-	glBegin(GL_LINES);
-	glColor3f(1.0, 1.0, 1.0);
-	glVertex3f(-1, 0, 0);
-	glVertex3f(1, 0, 0);
-	glEnd();
-	// Line Grid
-	glLineWidth(2.0);
-	glBegin(GL_LINES);
-	glColor3f(1.0, 1.0, 1.0);
-	glVertex3f(0, -1, 0);
-	glVertex3f(0, 1, 0);
-	glEnd();
 	glFlush(); // Render Now
 }
 /* Handler for window re-size event. Called back when the window first appears and
 whenever the window is re-sized with its new width and height */
-void reshape(GLsizei width, GLsizei height) {  // GLsizei for non-negative integer
-											   // Compute aspect ratio of the new window
-	if (height == 0) height = 1;                // To prevent divide by 0
+void reshape(GLsizei width, GLsizei height) {
+
+	windowWidth = width;
+	windowHeight = height;
+	if (height == (height / 2)) height = windowHeight;
 	GLfloat aspect = (GLfloat)width / (GLfloat)height;
-	// gluOrtho2D(0, windowWidth, windowHeight, 0);
-
 	// Set the viewport to cover the new window
-	glViewport(0, 0, width - 1, height - 1);
-
-	// Set the aspect ratio of the clipping area to match the viewport
-	glMatrixMode(GL_PROJECTION);  // To operate on the Projection matrix
-	glLoadIdentity();             // Reset the projection matrix
+	glViewport(0, 0, width, height);
+	glMatrixMode(GL_PROJECTION); 
+	glLoadIdentity();
 	if (width >= height) {
-		// aspect >= 1, set the height from -1 to 1, with larger width
-		// gluOrtho2D(-1.0 * aspect, 1.0 * aspect, -1.0, 1.0);
-		gluOrtho2D(-1.0 * aspect, 1.0 * aspect, -1.0, 1.0);
-		//gluOrtho2D(0 * aspect, windowWidth * aspect, windowHeight, 0);
+		gluOrtho2D(0 * aspect, GLdouble(width), GLdouble(height), 0);
 	}
-	else {
-		// aspect < 1, set the width to -1 to 1, with larger height
-		gluOrtho2D(-1.0, 1.0, -1.0 / aspect, 1.0 / aspect);
-		//gluOrtho2D(0, windowWidth, windowHeight / aspect, 0 / aspect);
+	else
+	{
+		gluOrtho2D(0, GLdouble(width), GLdouble(height) / aspect, 0);
 	}
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	displayFunc();
 
-	cout << "Aspect Left : " << -1 * aspect << endl;
+	cout << "aspect" << aspect << endl;
 }
 
 /*
