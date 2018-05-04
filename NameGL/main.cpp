@@ -61,6 +61,10 @@ void displayFunc()
 /* Handler for window re-size event. Called back when the window first appears and
 whenever the window is re-sized with its new width and height */
 void reshape(GLsizei width, GLsizei height) {
+	// References 
+	/*aspectRatio = (oldWidth / oldHeight)
+	newHeight = (newWidth / aspectRatio)
+		newWidth = ( newHeight * aspectRatio )*/
 
 	windowWidth = width;
 	windowHeight = height;
@@ -70,18 +74,18 @@ void reshape(GLsizei width, GLsizei height) {
 	glViewport(0, 0, width, height);
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
-	if (width >= height) {
-		gluOrtho2D(0 * aspect, GLdouble(width), GLdouble(height), 0);
+	if (width <= height) {
+		gluOrtho2D(0 , GLdouble(width) * aspect, GLdouble(height),0);
 	}
 	else
 	{
-		gluOrtho2D(0, GLdouble(width), GLdouble(height) / aspect, 0);
+		gluOrtho2D(0, GLdouble(width), GLdouble(height), 0);
 	}
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	displayFunc();
 
-	cout << "aspect" << aspect << endl;
+	cout << "aspect" << width /2  << endl;
 }
 
 /*
