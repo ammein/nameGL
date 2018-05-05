@@ -120,7 +120,7 @@ void displayFunc()
 		glVertex2f(432.669, pV); // Straight P
 		pV = pV + fixMove;
 	}
-	// Circle P
+	// Circle R
 	pH = 439.497;
 	for (int a = 0; a <= 1; a++) {
 		glVertex2f(pH, 81.465); // Horizontal Circle P
@@ -319,6 +319,408 @@ void displayFunc()
 					//PRESENTS ENDS
 	/*********************************************/
 
+
+	/*********************************************/
+					//BIG A
+	/*********************************************/
+	// Upper A
+	float point = 13.122;
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	fixMove = 13.122;
+	pV = 158.45;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(505.439, pV);
+		glVertex2f(518.561, pV);
+		pV = pV + fixMove;
+	}
+	glVertex2f(492.317, 171.572); // Extra
+	glVertex2f(531.683, 171.572); // Extra
+	glEnd();
+	// Upper LEFT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 184.694;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(479.194, pV);
+		glVertex2f(492.317, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// Upper RIGHT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 184.694;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(531.683, pV);
+		glVertex2f(544.806, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// LEFT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 210.939;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 6; a++)
+	{
+		glVertex2d(466.072, pV);
+		glVertex2d(479.194, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// RIGHT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 210.939;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 6; a++)
+	{
+		glVertex2d(544.806, pV);
+		glVertex2d(557.928, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// HORIZONTAL A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 492.317;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 3; a++)
+	{
+		glVertex2d(pV, 237.183);
+		glVertex2d(pV, 250.306);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	/*********************************************/
+					//ENDS BIG A
+	/*********************************************/
+
+	/*********************************************/
+					// AMIN SHAZRIN
+	/*********************************************/
+	// Upper A
+	point = 6.827;
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	fixMove = 6.827;
+	pV = 363.043;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(pV, 335.845);
+		pV = pV + fixMove;
+	}
+	glVertex2f(359.63, 342.673); // Extra
+	glVertex2f(373.285, 342.673); // Extra
+	glEnd();
+	// LEFT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 349.5;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2d(356.216, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// RIGHT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 349.5;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2d(376.698, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// HORIZONTAL A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 363.043;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2d(pV, 356.327);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// Ends A
+
+	// M Shape 
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++)
+	{
+		glVertex2d(388.573 , pV); // Vertical Left
+		pV = pV + fixMove;
+	}
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++)
+	{
+		glVertex2d(415.882, pV); // Vertical Rights
+		pV = pV + fixMove;
+	}
+	glVertex2f(395.4 , 342.673);// Extra
+	glVertex2f(402.227 , 349.5);// Extra
+	glVertex2f(409.055,342.673);// Extra
+	glEnd();
+
+	// I Shape 
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++)
+	{
+		glVertex2d(430.053, pV); // Vertical Left
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// End I
+
+	// Begin N
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	glColor3f(0.729, 0.619, 0.619);
+	// Reuse Defined Variable assign with new value
+	// Code reads from top to bottom
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(444.224, pV); // Straight N
+		pV = pV + fixMove;
+	}
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(464.706, pV); // Straight N
+		pV = pV + fixMove;
+	}
+	pV = 451.051;
+	pV2 = 342.673;
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(pV, pV2); // Diagonal N
+		pV = pV + fixMove;
+		pV2 = pV2 + fixMove;
+	}
+	glEnd();
+	// Ends N
+
+	// Begin S
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	glColor3f(0.729, 0.619, 0.619);
+	// Reuse Defined Variable assign with new value
+	// Code reads from top to bottom
+	pV = 335.845;
+	for (int a = 0; a <= 2; a++) {
+		glVertex2f(482.669, pV); // Straight S
+		pV = pV + fixMove;
+	}
+	pV = 349.5;
+	for (int a = 0; a <= 2; a++) {
+		glVertex2f(496.324, pV); // Straight S
+		pV = pV + fixMove;
+	}
+	// S Horizontal Shape
+	pH = 489.496;
+	for (int a = 0; a <= 1; a++) {
+		glVertex2f(pH, 335.845); // Horizontal S
+		pH = pH + fixMove;
+	}
+	pV2 = 489.496;
+	for (int a = 0; a <= 1; a++) {
+		glVertex2f(pV2, 349.5); // Horizontal S
+		pV2 = pV2 + fixMove;
+	}
+	pV3 = 482.669;
+	for (int a = 0; a <= 1; a++) {
+		glVertex2f(pV3, 363.155); // Horizontal S
+		pV3 = pV3 + fixMove;
+	}
+	glEnd();
+	// End S
+
+	// Begin H
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	glColor3f(0.729, 0.619, 0.619);
+	// Reuse Defined Variable assign with new value
+	// Code reads from top to bottom
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(510.169, pV); // Straight H
+		pV = pV + fixMove;
+	}
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(530.651, pV); // Straight H
+		pV = pV + fixMove;
+	}
+	pV = 516.996;
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(pV, 349.5); // Horizontal H
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// Ends H
+
+	// Begins A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 549.996;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(pV, 335.845); // Upper A
+		pV = pV + fixMove;
+	}
+	glVertex2f(546.582, 342.673); // Extra
+	glVertex2f(560.237, 342.673); // Extra
+	glEnd();
+	// LEFT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 349.5;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2d(543.169, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// RIGHT A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 349.5;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2d(563.651, pV);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// HORIZONTAL A
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 549.996;
+	glColor3d(0.729, 0.619, 0.619);
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2d(pV, 356.327);
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// Ends A
+
+	// Begin Z
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 576.169;
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2f(pV , 335.845); // Horizontal upper Z
+		pV = pV + fixMove;
+	}
+	pV = 576.169;
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2f(pV , 363.155); // Horizontal bottom Z
+		pV = pV + fixMove;
+	}
+	pV = 576.169;
+	pV2 = 356.327;
+	for (int a = 0; a <= 2; a++)
+	{
+		glVertex2f(pV , pV2); // Diagonal Z
+		pV = pV + fixMove; // Increase X
+		pV2 = pV2 - fixMove; // decrease Y
+	}
+	glEnd();
+	// Ends Z
+
+	// Begins R
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	glColor3f(0.729, 0.619, 0.619);
+	// Reuse Defined Variable assign with new value
+	// Code reads from top to bottom
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(601.014, pV); // Straight P
+		pV = pV + fixMove;
+	}
+	// Circle R
+	pH = 607.841;
+	for (int a = 0; a <= 1; a++) {
+		glVertex2f(pH, 335.845); // Horizontal Circle P
+		pH = pH + fixMove;
+	}
+	pV2 = 342.673;
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(614.669, pV2); // Vertical Circle P
+		pV2 = pV2 + fixMove;
+	}
+	glVertex2f(607.841, 349.5); //  last shape
+	glVertex2f(618.082, 356.327); // Diagonal R
+	glVertex2f(621.496, 363.155); // Diagonal R
+	glEnd();
+	// Ends R
+
+	// I Shape 
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++)
+	{
+		glVertex2d(634.71, pV); // Vertical Left
+		pV = pV + fixMove;
+	}
+	glEnd();
+	// End I
+
+	// Begin N
+	glPointSize(point);
+	glBegin(GL_POINTS);
+	glColor3f(0.729, 0.619, 0.619);
+	// Reuse Defined Variable assign with new value
+	// Code reads from top to bottom
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(648.88, pV); // Straight N
+		pV = pV + fixMove;
+	}
+	pV = 335.845;
+	for (int a = 0; a <= 4; a++) {
+		glVertex2f(669.363, pV); // Straight N
+		pV = pV + fixMove;
+	}
+	pV = 655.708;
+	pV2 = 342.673;
+	for (int a = 0; a <= 1; a++)
+	{
+		glVertex2f(pV, pV2); // Diagonal N
+		pV = pV + fixMove;
+		pV2 = pV2 + fixMove;
+	}
+	glEnd();
+	// Ends N
+
+	/*********************************************/
+				// ENDS AMIN SHAZRIN
+	/*********************************************/
+
 	glFlush(); // Render Now
 }
 /* Handler for window re-size event. Called back when the window first appears and
@@ -347,7 +749,7 @@ void reshape(GLsizei width, GLsizei height) {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	displayFunc();
-	cout << "Random Value = " << rand() << endl;
+	cout << "Random Value = " << rand() % 300<< endl;
 }
 
 /*
